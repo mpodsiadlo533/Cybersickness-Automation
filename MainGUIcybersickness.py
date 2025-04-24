@@ -11,9 +11,10 @@ from PIL import Image, ImageTk # type: ignore
 from unity_notifier import UnityNotifier 
 from ExperimentData import ExperimentData
 
-
+# variables which can be changed
 data_for_experiments = 'unity_data.csv'
-timestamp_file_event = "experiment_log.csv"
+timestamp_file_event = 'experiment_log.csv'
+unity_url_address = 'http://192.168.0.66:5001'
 
 #Class with gui
 class MainGUI(ExperimentData):
@@ -34,7 +35,7 @@ class MainGUI(ExperimentData):
 
         self.remaining_time = 0
         self.timer_running = False
-        self.notifier_unity = UnityNotifier()  
+        self.notifier_unity = UnityNotifier(unity_url_address)
         self.timer_job = None
         self.current_experiment = None
 
