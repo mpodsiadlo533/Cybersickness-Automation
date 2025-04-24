@@ -55,3 +55,26 @@ class UnityNotifier:
             print(f"[Notifier] HARD STOP sent, Response: {response.status_code}")
         except requests.exceptions.RequestException as e:
             print(f"[Notifier] Failed to send HARD STOP: {e}")
+
+
+class AcqMarkerSender:
+    '''
+    Eksperymentalny kod pod Acqknowledge
+    '''
+    def __init__(self, acq_ip="192.168.0.77", port=5050):
+        self.base_url = f"http://{acq_ip}:{port}"
+
+    def send_scenario(self, scenario_number, duration_sec):
+        payload = {"scenario": str(scenario_number), "duration": int(duration_sec)}
+        try:
+            r = requests.post(f"{self.base_url}/scenario", json=payload)
+            print(f"[AcqSender] Sent scenario {scenario_number}, got {r.status_code}")
+        except Exception as e:
+            print(f"[AcqSender] Error sending scenario: {e}")
+
+    def send_stop(self):
+        try:
+            r = requests.post(f"{self.base_url}/stop")
+            print(f"[AcqSender] STOP marker sent. Status: {r.status_code}")
+        except Exception as e:
+            print(f"[AcqSender] Error sending STOP marker: {e}")

@@ -6,7 +6,7 @@ class ExperimentData:
     '''
 
     def __init__(self, filepath):
-        self.data = pd.read_csv(filepath, delimeter =';')
+        self.data = pd.read_csv(filepath, sep =';')
         self.current_index = 0
 
     def get_next_experiment(self):

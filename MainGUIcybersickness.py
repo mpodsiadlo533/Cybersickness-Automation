@@ -8,7 +8,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk # type: ignore
 
 
-from unity_notifier import UnityNotifier 
+from unity_notifier import UnityNotifier, AcqMarkerSender
 from ExperimentData import ExperimentData
 
 # variables which can be changed
@@ -36,6 +36,7 @@ class MainGUI(ExperimentData):
         self.remaining_time = 0
         self.timer_running = False
         self.notifier_unity = UnityNotifier(unity_url_address)
+        self.notifier_acq = AcqMarkerSender("192.168.0.77")
         self.timer_job = None
         self.current_experiment = None
 
@@ -47,7 +48,7 @@ class MainGUI(ExperimentData):
         image_path = os.path.join(path_to_data_experiment, 'Cube_vis.png')
         if os.path.exists(image_path):
             original_image = Image.open(image_path)
-            resized_image = original_image.resize((120, 120), Image.ANTIALIAS)
+            resized_image = original_image.resize((120, 120))
             self.image = ImageTk.PhotoImage(resized_image)
         else:
             self.image = None
@@ -189,7 +190,8 @@ class MainGUI(ExperimentData):
         print("Sending scenario:", experiment["Scenario"])
 
         #wysylanie scenariusza na konkretny port w Unity
-        self.notifier_unity.start_scenario(experiment["Scenario"]) 
+        self.notifier_unity.start_scenario(experiment["Scenario"])
+        self.acq_sender.send_scenario(experiment["Scenario"], experiment["Duration_in_sec"])
         self.update_timer()
 
     def increment_index(self):
@@ -239,6 +241,7 @@ class MainGUI(ExperimentData):
 
         self.log_event("STOP")  
         self.notifier_unity.stop_scenario(self.current_experiment["Scenario"]) 
+        self.notifier_acq.send_scenario()
 
 
         self.timer_running = False
