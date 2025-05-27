@@ -48,7 +48,7 @@ def scenario():
     threading.Thread(target=handle_scenario, args=(scenario_number, int(duration))).start()
     return jsonify({"status": "Scenario started", "scenario": scenario_number, "duration": duration})
 
-<<<<<<< HEAD
+
 @app.route('/hardstop', methods=['POST'])
 def hardstop():
     if focus_acqknowledge():
@@ -57,8 +57,6 @@ def hardstop():
     else:
         print(f"[MarkerListener] Cannot send marker, AcqKnowledge not focused.")
 
-=======
->>>>>>> d14a7fc127aa5ea5282fa6e95853f8f2c4579d74
 if __name__ == "__main__":
     print("Marker listener running on http://0.0.0.0:5050")
     print("Waiting for POST /scenario {scenario, duration}...")
