@@ -41,7 +41,7 @@ This is the main GUI program that controls the entire experiment.
 * Send the scenario to Unity
 * Add time marks to a csv file - `experiment_log.csv`
 
-**Appearance: **
+**Appearance:**
 ![obraz](https://github.com/user-attachments/assets/fc4f5906-c3ee-49f4-bac4-453deff3afe5)
 
 **What's included?**
