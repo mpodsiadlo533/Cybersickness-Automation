@@ -100,7 +100,7 @@ python MainGUIcybersickness.py
 ```
 
 > [!CAUTION]
-> Don't clock `Start Experiment` yet
+> Don't click `Start Experiment` yet
 
 **Computer 2** 🖥️ :
 
