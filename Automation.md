@@ -86,11 +86,11 @@ It is given the experiment duration, and after the experiment ends, it also crea
 
 The order of starting programs isn't strict, but I recommend the following sequence:
 
-**Computer 1** 🖥️:
+#### 4.1 **Computer 1** 🖥️:
 
-#### 4.1 Run `Cybersickness.exe` in **Unity** 🎮
+##### 4.1.1 Run `Cybersickness.exe` in **Unity** 🎮
 
-#### 4.2 Run `MainGUIcybersickness.py` in **VS Code** 👩🏻‍💻
+##### 4.1.2 Run `MainGUIcybersickness.py` in **VS Code** 👩🏻‍💻
 
 > [!CAUTION]
 > Make sure that you are in the correct folder with `MainGUIcybersickness.py` in terminal.
@@ -103,9 +103,9 @@ python MainGUIcybersickness.py
 > [!CAUTION]
 > Don't click `Start Experiment` yet
 
-**Computer 2** 🖥️ :
+#### 4.2 **Computer 2** 🖥️ :
 
-#### 4.3 Run `Acqknowledge_listener.py` in **VS Code** 👩🏻‍💻
+##### 4.2.1 Run `Acqknowledge_listener.py` in **VS Code** 👩🏻‍💻
 
 > [!CAUTION]
 > Make sure that you are in the correct folder with `Acqknowledge_listener.py` in terminal.
@@ -118,13 +118,13 @@ Run program with
 python MainGUIcybersickness.py
 ```
 
-#### 4.4 Run `Acqknowledge` 🫀
+#### 4.2.2 Run `Acqknowledge` 🫀
 
 Prepare the experiment, calibrate all signals and press Run ▶️
 
-**Computer 1** 🖥️: [come back]
+#### 4.3 **Computer 1** 🖥️: [come back]
 
-#### 4.5 `Start Experiment` button
+##### 4.3.1 `Start Experiment` button
 
 ## 5. Recommendation
 
