@@ -90,6 +90,8 @@ The order of starting programs isn't strict, but I recommend the following seque
 
 ##### 4.1.1 Run `Cybersickness.exe` in **Unity** 🎮
 
+The file is in the `Unity_simulator` folder
+
 ##### 4.1.2 Run `MainGUIcybersickness.py` in **VS Code** 👩🏻‍💻
 
 > [!CAUTION]
