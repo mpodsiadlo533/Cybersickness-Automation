@@ -2,10 +2,9 @@ import os
 import csv
 import datetime
 
-import pandas as pd # type: ignore
 import tkinter as tk
 from tkinter import ttk
-from PIL import Image, ImageTk # type: ignore
+from PIL import Image, ImageTk 
 
 
 from unity_notifier import UnityNotifier, AcqMarkerSender
