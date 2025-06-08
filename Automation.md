@@ -120,7 +120,7 @@ Run program with
 python MainGUIcybersickness.py
 ```
 
-#### 4.2.2 Run `Acqknowledge` 🫀
+##### 4.2.2 Run `Acqknowledge` 🫀
 
 > Prepare the experiment, calibrate all signals and press Run ▶️
 
