@@ -1,3 +1,7 @@
+'''
+Ten plik odpalamy żeby odpalic GUI
+'''
+
 import os
 import csv
 import datetime
@@ -6,14 +10,15 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk 
 
-
 from unity_notifier import UnityNotifier, AcqMarkerSender
 from ExperimentData import ExperimentData
 
 # variables which can be changed
 data_for_experiments = 'unity_data.csv'
 timestamp_file_event = 'experiment_log.csv'
-unity_url_address = 'http://192.168.0.66:5001'
+unity_url_address = 'http://127.0.0.1:5001'
+acqknowledge_url_address = '10.160.67.104'
+
 
 #Class with gui
 class MainGUI(ExperimentData):
@@ -35,7 +40,7 @@ class MainGUI(ExperimentData):
         self.remaining_time = 0
         self.timer_running = False
         self.notifier_unity = UnityNotifier(unity_url_address)
-        self.notifier_acq = AcqMarkerSender("192.168.0.77")
+        self.notifier_acq = AcqMarkerSender(acqknowledge_url_address, 5050)
         self.timer_job = None
         self.current_experiment = None
 
@@ -190,7 +195,7 @@ class MainGUI(ExperimentData):
 
         #wysylanie scenariusza na konkretny port w Unity
         self.notifier_unity.start_scenario(experiment["Scenario"])
-        self.acq_sender.send_scenario(experiment["Scenario"], experiment["Duration_in_sec"])
+        self.notifier_acq.send_scenario(experiment["Scenario"], experiment["Duration_in_sec"])
         self.update_timer()
 
     def increment_index(self):
@@ -220,10 +225,8 @@ class MainGUI(ExperimentData):
         self.log_event("HARD STOP")
 
         #wysylanie hardstop do unity
-        self.notifier_unity.hard_stop() 
-        if self.flask_process:
-            self.flask_process.terminate()
-            print("[GUI] Flask server terminated.")
+        self.notifier_unity.hard_stop()
+        self.notifier_acq.hard_stop() 
 
         if self.timer_job is not None:
             self.root.after_cancel(self.timer_job)
@@ -240,7 +243,7 @@ class MainGUI(ExperimentData):
 
         self.log_event("STOP")  
         self.notifier_unity.stop_scenario(self.current_experiment["Scenario"]) 
-        self.notifier_acq.send_scenario()
+        self.notifier_acq.send_scenario(self.current_experiment["Scenario"], self.current_experiment["Duration_in_sec"])
 
 
         self.timer_running = False

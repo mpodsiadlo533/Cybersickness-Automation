@@ -48,6 +48,15 @@ def scenario():
     threading.Thread(target=handle_scenario, args=(scenario_number, int(duration))).start()
     return jsonify({"status": "Scenario started", "scenario": scenario_number, "duration": duration})
 
+
+@app.route('/hardstop', methods=['POST'])
+def hardstop():
+    if focus_acqknowledge():
+        pyautogui.hotkey('ctrl','space')
+        print(f"[MarkerListener] ctrl space sent for: {marker_type}")
+    else:
+        print(f"[MarkerListener] Cannot send marker, AcqKnowledge not focused.")
+
 if __name__ == "__main__":
     print("Marker listener running on http://0.0.0.0:5050")
     print("Waiting for POST /scenario {scenario, duration}...")

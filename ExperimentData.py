@@ -1,3 +1,7 @@
+'''
+Plik pomocniczy do GUI
+'''
+
 import pandas as pd
 
 class ExperimentData:

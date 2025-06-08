@@ -1,12 +1,16 @@
+'''
+Plik pomocniczy do GUI
+'''
+
 import requests
 
 class UnityNotifier:
     '''
-    base_url="http://192.168.0.66:5001"
+    base_url="http://192.168.0.1:5001"
     Tutaj jest adres IP komputera z Unity.
-    Domyślnie powinien być `localhost`, bo Unity i GUI działają na tym samym komputerze.
+    Domyślnie powinien być `localhost`, bo Unity i GUI działają na tym samym komputerze. Nie zmieniac nr portu!
     '''
-    def __init__(self, base_url="http://192.168.0.66:5001"):
+    def __init__(self, base_url="http://127.0.0.1:5001"):
         self.base_url = base_url
 
     def start_scenario(self, scenario_number):
@@ -61,7 +65,7 @@ class AcqMarkerSender:
     '''
     Eksperymentalny kod pod Acqknowledge
     '''
-    def __init__(self, acq_ip="192.168.0.77", port=5050):
+    def __init__(self, acq_ip="10.160.67.104", port=5050):
         self.base_url = f"http://{acq_ip}:{port}"
 
     def send_scenario(self, scenario_number, duration_sec):
@@ -78,3 +82,10 @@ class AcqMarkerSender:
             print(f"[AcqSender] STOP marker sent. Status: {r.status_code}")
         except Exception as e:
             print(f"[AcqSender] Error sending STOP marker: {e}")
+
+    def hard_stop(self):
+        try:
+            r = requests.post(f"{self.base_url}/hardstop")
+            print(f"[AcqSender] HARD STOP marker sent. Status: {r.status_code}")
+        except Exception as e:
+            print(f"[AcqSender] Error sending HARD STOP marker: {e}")
