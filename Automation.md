@@ -52,25 +52,25 @@ This is the main GUI program that controls the entire experiment.
 * three buttons with text - `Start Experiment` , `Stop Experiment` and `Hard Stop`
 * two buttons with symbols - `-` and `+`
 
-`Start Experiment` - starts the scenario
-`Stop Experiment` - interupts the scenario if necessary
-`Hard stop` - ends the experiment and closes all programs
+`Start Experiment` - starts the scenario <br>
+`Stop Experiment` - interupts the scenario if necessary <br>
+`Hard stop` - ends the experiment and closes all programs <br>
 
 #### **ExperimentData.py** 🐍
 
-A helper script for MainGUICybersickness.py. It helps load scenarios from the unity_data folder.
+> A helper script for MainGUICybersickness.py. It helps load scenarios from the unity_data folder.
 
 #### **ExperimentData.py** 🐍
 
-Another helper for MainGUICybersickness.py. It sends requests to AcqKnowledge and Unity.
+> Another helper for MainGUICybersickness.py. It sends requests to AcqKnowledge and Unity.
 
 #### **unity_notifier.py** 🐍
 
-It's a helper for `MainGUICybersickness.py` . It helps to send requests to Acqknowledge and Unity.
+> It's a helper for `MainGUICybersickness.py` . It helps to send requests to Acqknowledge and Unity.
 
 #### **Cube_vis.png**
 
-Used by `MainGUICybersickness.py` for visualizing how cubes will spawn. Shown in the GUI image above.
+> Used by `MainGUICybersickness.py` for visualizing how cubes will spawn. Shown in the GUI image above.
 
 ### 3.2 Computer 2 🖥️
 
@@ -90,7 +90,7 @@ The order of starting programs isn't strict, but I recommend the following seque
 
 ##### 4.1.1 Run `Cybersickness.exe` in **Unity** 🎮
 
-The file is in the `Unity_simulator` folder
+> The file is in the `Unity_simulator` folder
 
 ##### 4.1.2 Run `MainGUIcybersickness.py` in **VS Code** 👩🏻‍💻
 
@@ -122,7 +122,7 @@ python MainGUIcybersickness.py
 
 #### 4.2.2 Run `Acqknowledge` 🫀
 
-Prepare the experiment, calibrate all signals and press Run ▶️
+> Prepare the experiment, calibrate all signals and press Run ▶️
 
 #### 4.3 **Computer 1** 🖥️: [come back]
 
