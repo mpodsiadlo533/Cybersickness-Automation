@@ -78,9 +78,9 @@ This computer runs a listener to help create time markers in AcqKnowledge.
 
 #### `Acqknowledge_listener.py`
 
-This background script logs incoming requests and scenarios. 
-When it receives a request from the Start Experiment button, it automatically creates a time marker in AcqKnowledge. 
-It is given the experiment duration, and after the experiment ends, it also creates a marker.
+> This background script logs incoming requests and scenarios. 
+> When it receives a request from the Start Experiment button, it automatically creates a time marker in AcqKnowledge. 
+> It is given the experiment duration, and after the experiment ends, it also creates a marker.
 
 ## 4. Running experiment 👩‍🔬
 
