@@ -8,9 +8,9 @@ The research primarily uses two programs – scenarios created with 'Unity' and 
 
 Currently, the research setup requires two computers.
 
-> [!CAUTION]
+> [!WARNING]
 > 
-> Programs still don’t save files from Acqknowledge automatically
+> Programs don’t save files from Acqknowledge automatically
 
 ## 2. The structure of the folder 🧱
 ```
