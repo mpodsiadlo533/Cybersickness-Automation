@@ -64,9 +64,6 @@ This is the main GUI program that controls the entire experiment.
 
 > A helper script for MainGUICybersickness.py. It helps load scenarios from the unity_data folder.
 
-#### **ExperimentData.py** 🐍
-
-> Another helper for MainGUICybersickness.py. It sends requests to AcqKnowledge and Unity.
 
 #### **unity_notifier.py** 🐍
 
