@@ -1,5 +1,28 @@
 # `Automation` folder
 
+- [`Automation` folder](#automation-folder)
+  - [1. Description ✍️](#1-description-️)
+  - [2. The structure of the folder 🧱](#2-the-structure-of-the-folder-)
+  - [3. Description of files in folder 📁](#3-description-of-files-in-folder-)
+    - [3.1 Computer 1 🖥️](#31-computer-1-️)
+      - [**MainGUICybersickness.py**](#mainguicybersicknesspy)
+      - [**ExperimentData.py** 🐍](#experimentdatapy-)
+      - [**unity\_notifier.py** 🐍](#unity_notifierpy-)
+      - [**Cube\_vis.png**](#cube_vispng)
+    - [3.2 Computer 2 🖥️](#32-computer-2-️)
+      - [`Acqknowledge_listener.py`](#acqknowledge_listenerpy)
+  - [4. Running experiment 👩‍🔬](#4-running-experiment-)
+      - [4.1 **Computer 1** 🖥️:](#41-computer-1-️)
+        - [4.1.1 Run `Cybersickness.exe` in **Unity** 🎮](#411-run-cybersicknessexe-in-unity-)
+        - [4.1.2 Run `MainGUIcybersickness.py` in **VS Code** 👩🏻‍💻](#412-run-mainguicybersicknesspy-in-vs-code-)
+      - [4.2 **Computer 2** 🖥️ :](#42-computer-2-️-)
+        - [4.2.1 Run `Acqknowledge_listener.py` in **VS Code** 👩🏻‍💻](#421-run-acqknowledge_listenerpy-in-vs-code-)
+        - [4.2.2 Run `Acqknowledge` 🫀](#422-run-acqknowledge-)
+      - [4.3 **Computer 1** 🖥️: \[come back\]](#43-computer-1-️-come-back)
+        - [4.3.1 `Start Experiment` button](#431-start-experiment-button)
+  - [5. Recommendation](#5-recommendation)
+
+
 ## 1. Description ✍️
 
 This folder contains files necessary for conducting Cybersickness research.
