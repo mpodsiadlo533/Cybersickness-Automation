@@ -1,5 +1,7 @@
 # `Automation` folder
 
+The document structure: 
+
 - [`Automation` folder](#automation-folder)
   - [1. Description ✍️](#1-description-️)
   - [2. The structure of the folder 🧱](#2-the-structure-of-the-folder-)
@@ -158,3 +160,4 @@ python MainGUIcybersickness.py
 > Use `VS Code` for using these python files
 >
 > Make sure you have installed all necessary libraries and required programs.
+
